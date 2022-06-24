@@ -47,7 +47,8 @@ class _HomePageState extends State<HomePage> {
   LatLonCity? latLonCity = LatLonCity();
   Location? location = Location();
   BigWeatherModel? model = BigWeatherModel();
-  bool hasConnection = false;
+  // bool hasConnection = false;
+  bool hasConnection = true;
   bool sprefExists = false;
   bool sprefEmpty = true;
   late SharedPreferences sPref;
@@ -122,7 +123,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   Future<void> bigFunc() async {
-    await checkConnection();
+    // await checkConnection();
     await initSpref();
     await getDataSpref();
   }
@@ -353,7 +354,7 @@ class _HomePageState extends State<HomePage> {
                     //Кнопка погоды
                     ElevatedButton(
                       onPressed: () async {
-                        await checkConnection();
+                        // await checkConnection();
                         if(hasConnection){
                           Navigator.push(context, MaterialPageRoute(
                             builder: (context) => SecondScreen(model: model!,),
